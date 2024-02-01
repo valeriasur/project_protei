@@ -11,5 +11,6 @@ def converting_hours_to_seconds(time):
     hours = int(time_number[0])  # преобразование каждой части строки в int
     minutes = int(time_number[1])
     seconds = int(time_number[2])
-    total_seconds = hours * 3600 + minutes * 60 + seconds  # получение общего кол-ва секунд
+    total_seconds = hours * 3600 + minutes * 60 + \
+        seconds  # получение общего кол-ва секунд
     return total_seconds

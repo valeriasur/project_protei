@@ -2,7 +2,8 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 import numpy as np
 
-def standardization_values(x,y):
+
+def standardization_values(x, y):
     """
     Выполняет стандартизацию числовых значений.
     Параметры:
@@ -19,5 +20,6 @@ def standardization_values(x,y):
     scaler = MinMaxScaler()
     x_scaled = scaler.fit_transform(np.array(x).reshape(-1, 1))
     y_scaled = scaler.fit_transform(np.array(y).reshape(-1, 1))
-    x_train, x_valid, y_train, y_valid = train_test_split(x_scaled, y_scaled, test_size=0.25, random_state=0)
+    x_train, x_valid, y_train, y_valid = train_test_split(
+        x_scaled, y_scaled, test_size=0.25, random_state=0)
     return x_scaled, y_scaled, x_train, y_train, x_valid, y_valid
